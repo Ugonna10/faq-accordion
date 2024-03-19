@@ -9,6 +9,7 @@
     /* colors */
     --color-white: hsl(0, 0%, 100%);
     --color-light-pink: hsl(275, 100%, 97%);
+    --color-violet: hsl(281, 83%, 54%);
     --color-grayish-purple: hsl(292, 16%, 49%);
     --color-dark-purple: hsl(292, 42%, 14%);
 }
@@ -96,6 +97,12 @@ body {
 .question-text {
     width: 80%;
     color: var(--color-dark-purple);
+    cursor: pointer;
+    transition: color 300ms ease;
+}
+
+.question-text:hover, .question-text:focus{
+    color: var(--color-violet);
 }
 
 .question-btn {
@@ -110,7 +117,16 @@ body {
 
 .answer {
     color: var(--color-grayish-purple);
+    padding-bottom: 25px;
     display: none;
+}
+
+.question.active>.question-btn {
+    background-image: url('images/icon-minus.svg');
+}
+
+.question.active+.answer {
+    display: block;
 }
 
 /* Large screens ================ */
