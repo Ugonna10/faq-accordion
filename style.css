@@ -29,19 +29,11 @@ h1 {
     font-weight: var(--font-weight-bold);
 }
 
-h2 {
-    font-size: 1.6rem;
-    font-weight: var(--font-weight-semi-bold);
-}
-
 button {
     font-family: inherit;
+    font-size: inherit;
     border: none;
     cursor: pointer;
-}
-
-img {
-    display: block;
 }
 
 body {
@@ -52,11 +44,6 @@ body {
     background-image: url('images/background-pattern-mobile.svg');
     background-size: 100%;
     background-repeat: no-repeat;
-
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #faq-section {
@@ -64,7 +51,7 @@ body {
     max-width: 330px;
     border-radius: 1rem;
     padding: 20px;
-    margin-block: 100px;
+    margin: 100px auto;
 }
 
 .faq-section-title {
@@ -79,50 +66,38 @@ body {
     scale: 0.5;
 }
 
-.qa-group{
+.qa-group {
     border-bottom: 1px solid var(--color-light-pink);
 }
 
-.qa-group:last-child{
+.qa-group:last-child {
     border: none;
 }
 
-.question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 25px;
-}
-
-.question-text {
-    width: 80%;
-    color: var(--color-dark-purple);
-    cursor: pointer;
-    transition: color 300ms ease;
-}
-
-.question-text:hover, .question-text:focus{
-    color: var(--color-violet);
-}
-
 .question-btn {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-image: url('images/icon-plus.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+    width: 100%;
+    font-weight: var(--font-weight-semi-bold);
+    padding-block: 25px;
+    background-color: transparent;
+    text-align: start;
+}
+
+.question-btn::after {
+    content: url('images/icon-plus.svg');
+}
+
+.question.active>.question-btn::after {
+    content: url('images/icon-minus.svg');
 }
 
 .answer {
     color: var(--color-grayish-purple);
-    padding-bottom: 25px;
     display: none;
-}
-
-.question.active>.question-btn {
-    background-image: url('images/icon-minus.svg');
+    padding-bottom: 25px;
 }
 
 .question.active+.answer {
